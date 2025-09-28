@@ -1,0 +1,94 @@
+<div class="navbar">
+  <div class="logo">
+    <a href="#">
+      <img src="https://iconpowersolutions.com/assets/images/logo-default.png" alt="Company Logo">
+    </a>
+    <a href="#" class="site-name">Icon Power Solutions Pvt. Ltd.</a>
+  </div>
+
+  <div class="hamburger" id="hamburger">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+  <div class="nav-right" id="navMenu">
+    <a href="#home">Home</a>
+    <a href="#about">About Us</a>
+    <a href="#services">Services</a>
+    <a href="#team">Products</a>
+    <a href="#portfolio">Partners</a>
+    <a href="#contact">Contact</a>
+    <a href="blog.html">Blog</a>
+  </div>
+</div>
+
+<style>
+.navbar {
+  background-color: #222;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 30px;
+  margin-right: 10px;
+}
+
+.site-name {
+  color: #fff;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.nav-right {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.nav-right a {
+  color: #ddd;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.nav-right a:hover {
+  background-color: #575757;
+  color: white;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger div {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
+</style>
+
+<script>
+document.getElementById("hamburger").addEventListener("click", function() {
+  document.getElementById("navMenu").classList.toggle("active");
+});
+</script>

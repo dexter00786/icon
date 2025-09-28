@@ -1,0 +1,112 @@
+<div class="carousel" id="home">
+  <div class="carousel-slide active" style="background-image: url('https://t3.ftcdn.net/jpg/07/17/09/42/240_F_717094278_XZeb5JE3OPRK5B4CLmq42bhJz1TaDkE3.jpg');">
+    <div class="carousel-caption">
+      <h2>Surveillance Room</h2>
+      <p>Professional solar energy solutions to help reduce energy costs and carbon footprint.</p>
+    </div>
+  </div>
+  <div class="carousel-slide" style="background-image: url('https://as1.ftcdn.net/v2/jpg/12/67/06/58/1000_F_1267065846_gXcA8ImvKPIxlryCs9UWYP9aeXHpKXEL.jpg');">
+    <div class="carousel-caption">
+      <h2>Server Room</h2>
+      <p>Regular maintenance and support to ensure system performance and reliability.</p>
+    </div>
+  </div>
+  <div class="carousel-slide" style="background-image: url('https://images.unsplash.com/photo-1682562031269-58a59c81432c?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGRhdGElMjBjZW50ZXJ8ZW58MHx8MHx8fDA%3D');">
+    <div class="carousel-caption">
+      <h2>Data Center</h2>
+      <p>Custom design and integration of power solutions tailored to specific client needs.</p>
+    </div>
+  </div>
+  <div class="carousel-slide" style="background-image: url('https://t4.ftcdn.net/jpg/09/12/45/79/240_F_912457956_izk6PDh07zk6LE4Ztuns8FNb2dqpEJJY.jpg');">
+    <div class="carousel-caption">
+      <h2>Video Conferencing & TelePresence</h2>
+      <p>Regular maintenance and support to ensure system performance and reliability.</p>
+    </div>
+  </div>
+  <div class="carousel-slide" style="background-image: url('https://t3.ftcdn.net/jpg/09/39/55/88/240_F_939558886_Rng2B244KcHaVuIbKYaZ9M0G6JXR9Di4.jpg');">
+    <div class="carousel-caption">
+      <h2>Conference Room Design</h2>
+      <p>Comprehensive audits to assess power efficiency and identify improvement areas.</p>
+    </div>
+  </div>
+  <div class="carousel-slide" style="background-image: url('https://t3.ftcdn.net/jpg/12/68/15/04/240_F_1268150478_tI5IuS0APbUsZqG0xR7lDfEewsxYHSHa.jpg');">
+    <div class="carousel-caption">
+      <h2>Power Supply & Management System</h2>
+      <p>Regular maintenance and support to ensure system performance and reliability.</p>
+    </div>
+  </div>
+  <div class="carousel-slide" style="background-image: url('https://t4.ftcdn.net/jpg/04/25/10/55/240_F_425105540_6CBmURbfytH2u9kyrjrdCoq15rwFCWS9.jpg');">
+    <div class="carousel-caption">
+      <h2>Networking (LAN, WAN,WiFi & GEPON)</h2>
+      <p>Regular maintenance and support to ensure system performance and reliability.</p>
+    </div>
+  </div>
+  <div class="carousel-slide" style="background-image: url('https://iconpowersolutions.com/images/index/revolution-slider/scroll3.png');">
+    <div class="carousel-caption">
+      <h2>SMART BUSINESS SOLUTIONS!</h2>
+      <p>PATROS – Free HTML5/CSS3 Responsive Website Template.</p>
+    </div>
+  </div>
+  <div class="carousel-slide" style="background-image: url('https://iconpowersolutions.com/images/index/revolution-slider/scroll1.png');">
+    <div class="carousel-caption">
+      <h2>PREMIUM CREATIVE CONTENT!</h2>
+      <p>Lorem Ipsum is simply dummy text of typesetting industry.</p>
+    </div>
+  </div>
+  <div class="carousel-slide" style="background-image: url('https://iconpowersolutions.com/images/index/revolution-slider/scrol2.png');">
+    <div class="carousel-caption">
+      <h2>UNIQUE DESIGN!</h2>
+      <p>Lorem Ipsum is simply dummy text of typesetting industry.</p>
+    </div>
+  </div>
+</div>
+
+<style>
+.carousel {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  margin-top: 60px;
+}
+
+.carousel-slide {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.carousel-slide.active {
+  opacity: 1;
+}
+
+.carousel-caption {
+  position: absolute;
+  bottom: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 20px;
+  border-radius: 8px;
+}
+</style>
+
+<script>
+const slides = document.querySelectorAll('.carousel-slide');
+let currentSlide = 0;
+
+function showNextSlide() {
+  slides[currentSlide].classList.remove('active');
+  currentSlide = (currentSlide + 1) % slides.length;
+  slides[currentSlide].classList.add('active');
+}
+
+setInterval(showNextSlide, 5000);
+</script>

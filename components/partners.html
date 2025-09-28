@@ -1,0 +1,148 @@
+<div class="content-section" id="portfolio">
+  <h2>Our Partners</h2>
+  <div class="partners-container">
+    <button class="arrow-btn arrow-left" onclick="scrollPartners(-1)">&#10094;</button>
+    <div class="partners-grid" id="partnersGrid">
+      <div class="partner-card">
+        <img src="https://iconpowersolutions.com/images/logos/t-c-i-l.png" alt="Partner Logo" class="partner-logo" />
+        <div class="partner-name">TCIL</div>
+        <div class="partner-desc">TCIL, a prime engineering and consultancy company, is a Mini Ratna Category-I wholly owned Government of India Public Sector Enterprise under the administrative control of the Department of Telecommunications (DOT), Ministry of Communications, Government of India.</div>
+      </div>
+      <div class="partner-card">
+        <img src="https://iconpowersolutions.com/images/logos/alstom.png" alt="Partner Logo" class="partner-logo" />
+        <div class="partner-name">Alstom</div>
+        <div class="partner-desc">Alstom SA is a French multinational rail transport systems manufacturer. It is active in the fields of passenger transportation, rail services, signaling, and locomotives, producing high-speed, suburban, regional and urban trains along with trams.</div>
+      </div>
+      <div class="partner-card">
+        <img src="https://iconpowersolutions.com/images/logos/aui.jpeg" alt="Partner Logo" class="partner-logo" />
+        <div class="partner-name">Airports Authority Of India</div>
+        <div class="partner-desc">The Airports Authority of India (AAI) is a statutory body under the ownership of the Ministry of Civil Aviation, Government of India. It is responsible for creating, upgrading, maintaining, and managing civil aviation infrastructure in India.</div>
+      </div>
+      <div class="partner-card">
+        <img src="https://iconpowersolutions.com/images/logos/t-c-i-l.png" alt="Partner Logo" class="partner-logo" />
+        <div class="partner-name">TCIL</div>
+        <div class="partner-desc">TCIL, a prime engineering and consultancy company, is a Mini Ratna Category-I wholly owned Government of India Public Sector Enterprise under the administrative control of the Department of Telecommunications (DOT), Ministry of Communications, Government of India.</div>
+      </div>
+      <div class="partner-card">
+        <img src="https://iconpowersolutions.com/images/logos/alstom.png" alt="Partner Logo" class="partner-logo" />
+        <div class="partner-name">Alstom</div>
+        <div class="partner-desc">Alstom SA is a French multinational rail transport systems manufacturer. It is active in the fields of passenger transportation, rail services, signaling, and locomotives, producing high-speed, suburban, regional and urban trains along with trams.</div>
+      </div>
+      <div class="partner-card">
+        <img src="https://iconpowersolutions.com/images/logos/aui.jpeg" alt="Partner Logo" class="partner-logo" />
+        <div class="partner-name">Airports Authority Of India</div>
+        <div class="partner-desc">The Airports Authority of India (AAI) is a statutory body under the ownership of the Ministry of Civil Aviation, Government of India. It is responsible for creating, upgrading, maintaining, and managing civil aviation infrastructure in India.</div>
+      </div>
+    </div>
+    <button class="arrow-btn arrow-right" onclick="scrollPartners(1)">&#10095;</button>
+  </div>
+</div>
+
+<style>
+.partners-section {
+  padding: 40px 20px;
+  text-align: center;
+  position: relative;
+  max-width: 100%;
+}
+
+.partners-section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.partners-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+
+.partners-grid {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  flex-wrap: nowrap;
+}
+
+.partners-grid::-webkit-scrollbar {
+  display: none;
+}
+
+.partners-grid {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.partner-card {
+  flex: 0 0 auto;
+  width: 250px;
+  background: #fff;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.partner-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.partner-logo {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin-bottom: 15px;
+}
+
+.partner-name {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #444;
+  margin-bottom: 10px;
+}
+
+.partner-desc {
+  font-size: 0.9rem;
+  color: #666;
+  text-align: center;
+}
+
+.arrow-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.9);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  cursor: pointer;
+  z-index: 2;
+}
+
+.arrow-btn:hover {
+  background: white;
+}
+
+.arrow-left {
+  left: 0;
+}
+
+.arrow-right {
+  right: 0;
+}
+</style>
+
+<script>
+function scrollPartners(direction) {
+  const grid = document.getElementById('partnersGrid');
+  const cardWidth = grid.querySelector('.partner-card').offsetWidth + 20;
+  grid.scrollBy({ left: direction * cardWidth, behavior: 'smooth' });
+}
+</script>
