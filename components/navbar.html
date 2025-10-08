@@ -16,6 +16,22 @@
     <a href="#home">Home</a>
     <a href="#about">About Us</a>
     <a href="#services">Services</a>
+    <div class="solutions-dropdown">
+      <a href="#solutions" id="solutionsLink">Solutions</a>
+      <div class="solutions-tooltip" id="solutionsTooltip">
+        <div class="tooltip-content">
+          <h4>Our Solutions</h4>
+            <ul>
+              <li><a href="solution-detail.html?solution=power-solutions">Power Solutions</a></li>
+              <li><a href="solution-detail.html?solution=telecom-solutions">Telecom Solutions</a></li>
+              <li><a href="solution-detail.html?solution=security-solutions">Security Solutions</a></li>
+              <li><a href="solution-detail.html?solution=data-center-solutions">Data Center Solutions</a></li>
+              <li><a href="solution-detail.html?solution=solar-solutions">Solar Solutions</a></li>
+              <li><a href="solution-detail.html?solution=networking-solutions">Networking Solutions</a></li>
+            </ul>
+        </div>
+      </div>
+    </div>
     <a href="#team">Products</a>
     <a href="#portfolio">Partners</a>
     <a href="#contact">Contact</a>
@@ -85,10 +101,114 @@
   background-color: #fff;
   transition: all 0.3s ease;
 }
+
+.solutions-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.solutions-tooltip {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  min-width: 250px;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+}
+
+.solutions-tooltip.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.tooltip-content {
+  padding: 20px;
+}
+
+.tooltip-content h4 {
+  margin: 0 0 15px 0;
+  color: #333;
+  font-size: 16px;
+  font-weight: 600;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 8px;
+}
+
+.tooltip-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tooltip-content li {
+  margin-bottom: 8px;
+}
+
+.tooltip-content li:last-child {
+  margin-bottom: 0;
+}
+
+.tooltip-content a {
+  color: #555;
+  text-decoration: none;
+  display: block;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  font-size: 14px;
+}
+
+.tooltip-content a:hover {
+  background-color: #f8f9fa;
+  color: #007bff;
+  transform: translateX(5px);
+}
 </style>
 
 <script>
 document.getElementById("hamburger").addEventListener("click", function() {
   document.getElementById("navMenu").classList.toggle("active");
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  const solutionsLink = document.getElementById('solutionsLink');
+  const solutionsTooltip = document.getElementById('solutionsTooltip');
+
+  if (solutionsLink && solutionsTooltip) {
+    solutionsLink.addEventListener('click', function(e) {
+      e.preventDefault();
+      solutionsTooltip.classList.toggle('show');
+    });
+
+    document.addEventListener('click', function(e) {
+      if (!solutionsLink.contains(e.target) && !solutionsTooltip.contains(e.target)) {
+        solutionsTooltip.classList.remove('show');
+      }
+    });
+
+    solutionsLink.addEventListener('mouseenter', function() {
+      solutionsTooltip.classList.add('show');
+    });
+
+    solutionsLink.addEventListener('mouseleave', function() {
+      setTimeout(function() {
+        if (!solutionsTooltip.matches(':hover')) {
+          solutionsTooltip.classList.remove('show');
+        }
+      }, 100);
+    });
+
+    solutionsTooltip.addEventListener('mouseleave', function() {
+      solutionsTooltip.classList.remove('show');
+    });
+  }
 });
 </script>

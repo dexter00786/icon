@@ -75,3 +75,62 @@ function scrollPartners(direction) {
     grid.scrollBy({ left: direction * cardWidth, behavior: 'smooth' });
   }
 }
+
+// Solutions tooltip functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const solutionsLink = document.getElementById('solutionsLink');
+  const solutionsTooltip = document.getElementById('solutionsTooltip');
+
+  if (solutionsLink && solutionsTooltip) {
+    // Check if device is mobile
+    function isMobile() {
+      return window.innerWidth <= 992;
+    }
+
+    solutionsLink.addEventListener('click', function(e) {
+      e.preventDefault();
+
+      if (isMobile()) {
+        // On mobile, toggle sub-list instead of tooltip
+        solutionsTooltip.classList.toggle('mobile-submenu');
+      } else {
+        // On desktop, show tooltip
+        solutionsTooltip.classList.toggle('show');
+      }
+    });
+
+    // Desktop behavior
+    if (!isMobile()) {
+      document.addEventListener('click', function(e) {
+        if (!solutionsLink.contains(e.target) && !solutionsTooltip.contains(e.target)) {
+          solutionsTooltip.classList.remove('show');
+        }
+      });
+
+      solutionsLink.addEventListener('mouseenter', function() {
+        solutionsTooltip.classList.add('show');
+      });
+
+      solutionsLink.addEventListener('mouseleave', function() {
+        setTimeout(function() {
+          if (!solutionsTooltip.matches(':hover')) {
+            solutionsTooltip.classList.remove('show');
+          }
+        }, 100);
+      });
+
+      solutionsTooltip.addEventListener('mouseleave', function() {
+        solutionsTooltip.classList.remove('show');
+      });
+    }
+
+    // Handle window resize
+    window.addEventListener('resize', function() {
+      if (isMobile()) {
+        solutionsTooltip.classList.remove('show');
+      } else {
+        solutionsTooltip.classList.remove('mobile-submenu');
+      }
+    });
+  }
+});
